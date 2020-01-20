@@ -1,4 +1,4 @@
-odoo.define('pos_kitchen_receipt_app.pos', function(require) {
+odoo.define('zero_pos_kitchen_receipt.pos', function(require) {
     "use strict";
 
     var models = require('point_of_sale.models');
@@ -74,7 +74,7 @@ var PrintKotButtonScreen = screens.ScreenWidget.extend({
         },
         
 
-        get_coupon: function(){
+        get_receipt: function(){
             return this.gui.get_current_screen_param('options');
         },
 
@@ -105,20 +105,20 @@ var PrintKotButtonScreen = screens.ScreenWidget.extend({
         kot_render: function(){
             this.$('.pos-payment-receipt-container').html(QWeb.render('KotReceipt',this.kot_render_env()));
         },
-        print_xml_coupon: function() {
+        print_xml_receipt: function() {
             var receipt = QWeb.render('KotReceipt', this.kot_render_env());
             this.pos.proxy.print_receipt(receipt);
         },
         print_web_payment: function() {
             window.print();
         },
-        print_coupon: function() {
+        print_receipt: function() {
             var self = this;
             if (!this.pos.config.iface_print_via_proxy) { 
 
                 this.print_web_payment();
             } else {    
-                this.print_xml_coupon();
+                this.print_xml_receipt();
             }
         },
 
@@ -139,8 +139,8 @@ var PrintKotButtonScreen = screens.ScreenWidget.extend({
                 self.gui.back();
             });
             
-            this.$('.button.print-coupon').click(function(){
-                self.print_coupon();
+            this.$('.button.print-receipt').click(function(){
+                self.print_receipt();
             });
             
         },
