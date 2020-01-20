@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <templates id="pos_kot_print_template" inherit_id="point_of_sale.template" xml:space="preserve">
+    	  	<!-- PrintKotButtonWidget -->
+    <t t-name="PrintKotButtonWidget" name="kot print Button Widget">
+    	<t t-if="widget.pos.config.kot_print">
+	        <div class="control-button">
+	            <i class="fa fa-print"></i>Print Kitchen Receipt 
+	        </div>
+    	</t>
+    </t>
+
+
+        <!-- After Created orderlines Print Buttton -->
+	<t t-name="PrintKotButtonScreen">
+	  	<div class='receipt-screen screen'>
+		  	<div class='screen-content'>
+				<div class='top-content'>
+					<span class='button back' style="background-color:#6EC89B; color:white">
+						<i class='fa fa-angle-double-left' style="margin-left:5px;"></i>
+						Back
+					</span>
+					<span class='button next' style="background-color:#6EC89B; color:white">
+						Ok
+						<i class='fa fa-angle-double-right' style="margin-left:5px;"></i>
+					</span>
+				</div>
+				<div class="centered-content touch-scrollable">
+					<div class="button print-coupon">
+						  <i class='fa fa-print'></i> Print Coupon
+					</div>
+					<div class="pos-payment-receipt-container" style="text-align: center;">
+					  </div>
+				</div>
+			</div>
+	  </div>
+	</t>
+
+
+	<t t-name="KotTicket">
+		<t t-jquery=".pos-sale-ticket" t-operation="replace">
+	        <div class="pos-sale-ticket">
+		            <div class="pos-center-align"><t t-esc="order.formatted_validation_date"/> <t t-esc="order.name"/></div>
+		            <br />
+		            <t t-if="widget.pos.config.is_table_management">
+		            <div class="receipt-phone">
+		                Floor : <t t-esc="order.table.floor_id[1] || ''"/><br />
+		            </div>
+		            
+		            <div class="receipt-user">
+		                Table: <t t-esc="order.table.name"/><br />
+		            </div>
+		            </t>
+		            <div class="receipt-user">
+		                Waiter: <t t-esc="widget.pos.pos_session.user_id[1]"/><br />
+		            </div>
+		            <br />
+		            <t t-if = "count &gt; 0">
+			            <table class='receipt-orderlines'>
+			                <colgroup>
+			                    <col width='50%' />
+			                    <col width='50%' />
+			                </colgroup>
+			                <th>Product</th>
+			                <th style = "text-align : right;">Units</th>
+			                <tr t-foreach="orderlines" t-as="orderline">
+		                		<t t-if = "orderline.kot_print">
+				                    <td>
+				                        <t t-esc="orderline.get_product().display_name"/>
+				                    </td>
+				                    <td class="pos-right-align">
+				                        <t t-esc="orderline.get_quantity_str_with_unit()"/>
+				                    </td>
+				                </t>
+			                </tr>
+			            </table>
+			        </t>
+			        <t t-if = "count == 0 ">
+			        	<div style = "text-align : center;">No Kitchen Order Available</div>
+			        </t>
+		            <br />
+
+	        </div>
+	    </t>
+    </t>
+    </templates>
