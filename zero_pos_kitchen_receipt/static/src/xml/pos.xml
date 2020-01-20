@@ -25,7 +25,7 @@
 					</span>
 				</div>
 				<div class="centered-content touch-scrollable">
-					<div class="button print-coupon">
+					<div class="button print-receipt">
 						  <i class='fa fa-print'></i> Print Coupon
 					</div>
 					<div class="pos-payment-receipt-container" style="text-align: center;">
@@ -36,9 +36,9 @@
 	</t>
 
 
-	<t t-name="KotTicket">
-		<t t-jquery=".pos-sale-ticket" t-operation="replace">
-	        <div class="pos-sale-ticket">
+	<t t-name="KotReceipt">
+		<t t-jquery=".pos-receipt" t-operation="replace">
+	        <div class="pos-receipt">
 		            <div class="pos-center-align"><t t-esc="order.formatted_validation_date"/> <t t-esc="order.name"/></div>
 		            <br />
 		            <t t-if="widget.pos.config.is_table_management">
