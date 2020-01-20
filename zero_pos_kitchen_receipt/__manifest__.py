@@ -2,16 +2,19 @@
 
 {
     "name" : "POS Kitchen Receipt Print",
-    "author": "Edge Technologies",
-    "version" : "12.0.1.0",
-    "live_test_url":'https://youtu.be/R-cwRF2x8qc',
+    "version" : ".1.0",
+    'category': 'Point Of Sale',
+    'author': 'Zero Systems',
+    'company': 'Zero for Information Systems',
+    'website': "https://www.erpzero.com",
+    'email': "sales@erpzero.com",
     "images":["static/description/main_screenshot.png"],
     'summary': 'POS Kitchen Receipt Print is designed to print Kitchen Receipt in POS.',
-    "description": """ This app use to print the receipt for kitchen order. only non-printed or newly added product will be printed for the same order for restricting the duplication. 
+    "description": """ This app use to print the receipt for kitchen order. only non-printed 
+    or newly added product will be printed for the same order for restricting the duplication. 
     
 
     POS Kitchen Receipt Print
-
     Kitchen Receipt Print
     print receipt 
     print pos kictchen receipt
@@ -33,7 +36,6 @@
 
 
      """,
-    "license" : "OPL-1",
     "depends" : ['base','point_of_sale','pos_restaurant'],
     "data": [
         'views/custom_js_added.xml',
@@ -42,11 +44,8 @@
     'qweb': [
     'static/src/xml/pos.xml'
     ],
-    "auto_install": False,
-    "installable": True,
-    "price": 25,
-    "currency": 'EUR',
-    "category" : "Point of Sale",
+    'installable': True,
+    'auto_install': False,
+    'application': False,
     
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
