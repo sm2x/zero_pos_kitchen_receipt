@@ -103,10 +103,10 @@ var PrintKotButtonScreen = screens.ScreenWidget.extend({
         },
 
         kot_render: function(){
-            this.$('.pos-payment-receipt-container').html(QWeb.render('KotTicket',this.kot_render_env()));
+            this.$('.pos-payment-receipt-container').html(QWeb.render('KotReceipt',this.kot_render_env()));
         },
         print_xml_coupon: function() {
-            var receipt = QWeb.render('KotTicket', this.kot_render_env());
+            var receipt = QWeb.render('KotReceipt', this.kot_render_env());
             this.pos.proxy.print_receipt(receipt);
         },
         print_web_payment: function() {
