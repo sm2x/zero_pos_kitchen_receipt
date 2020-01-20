@@ -8,7 +8,7 @@
     'company': 'Zero for Information Systems',
     'website': "https://www.erpzero.com",
     'email': "sales@erpzero.com",
-    "images":["static/description/logo.png"],
+    "images":["logo.PNG"],
     'summary': 'POS Kitchen Receipt Print is designed to print Kitchen Receipt in POS.',
     "description": """ This app use to print the receipt for kitchen order. only non-printed 
     or newly added product will be printed for the same order for restricting the duplication. 
