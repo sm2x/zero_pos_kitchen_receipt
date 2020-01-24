@@ -18,7 +18,7 @@ msgstr ""
 #. module: zero_pos_kitchen_receipt
 #: model_terms:ir.ui.view,arch_db:zero_pos_kitchen_receipt.inherit_view_pos_kot_print_config_form
 msgid "Allow To Print Kitchen Order Receipt"
-msgstr ""
+msgstr "السماح بطباعة امر للمطبخ"
 
 #. module: zero_pos_kitchen_receipt
 #. openerp-web
@@ -37,7 +37,7 @@ msgstr ""
 msgid ""
 "Don't turn this option on if you take orders on smartphones or tablets. Such"
 " devices already benefit from a native keyboard."
-msgstr ""
+msgstr "الاجهزة بالفعل متصلة بلوحة مفاتيح"
 
 #. module: zero_pos_kitchen_receipt
 #. openerp-web
@@ -51,7 +51,7 @@ msgstr "الطابق"
 #: code:addons/zero_pos_kitchen_receipt/static/src/xml/pos.xml:0
 #, python-format
 msgid "No Kitchen Order Available"
-msgstr "لا يوجد امر للمطبخ"
+msgstr "لا يوجد امر للطباعة للمطبخ"
 
 #. module: zero_pos_kitchen_receipt
 #. openerp-web
