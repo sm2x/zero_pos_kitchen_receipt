@@ -69,7 +69,7 @@ msgstr "إعدادات نقطة البيع"
 #. openerp-web
 #: code:addons/zero_pos_kitchen_receipt/static/src/xml/pos.xml:0
 #, python-format
-msgid "Print Receipt"
+msgid "Print Coupon"
 msgstr "طباعة الامر"
 
 #. module: zero_pos_kitchen_receipt
